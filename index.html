@@ -13,14 +13,141 @@
     <div class="h-[100vh] w-[100vw] bg-black text-white">
         <div class="nav h-20 flex cursor-pointer items-center justify-center gap-1">
             <div class="w-[40%] max-w-[700px] h-[2px] border-[0.5px] border-dashed border-stone-700 transition-all duration-150 ease-in hover:border-stone-400"></div>
-            <div class="font-black italic transition-all duration-150 ease-in hover:not-italic hover:scale-[1.3] hover:mx-2">sai</div>
+            <div class="font-black italic transition-all duration-150 ease-in hover:not-italic">sai</div>
             <div class="w-[40%] max-w-[700px] h-[2px] border-[0.5px] border-dashed border-stone-700 transition-all duration-150 ease-in hover:border-stone-400"></div>
+        </div>
+        <div class="h-[90vh] overflow-hidden flex items-center justify-between">
+            <div class="left w-[40%] max-w-[500px] h-full">
+                <div id="img1" class="img">
+                    <figure class="fx" id="fx1">
+                        <img src="./images/daydream1.jpeg">
+                    </figure>
+                </div>
+                <div id="img1" class="img">
+                    <figure class="fx" id="fx1">
+                        <img src="./images/daydream2.jpeg">
+                    </figure>
+                </div>
+                <div id="img1" class="img">
+                    <figure class="fx" id="fx1">
+                        <img src="./images/daydream3.jpeg">
+                    </figure>
+                </div>
+            </div>
+            <div class="text-center items-center justify-center flex flex-col">
+                <div class="flex flex-row gap-2 text-stone-400">
+                    <p id="age">age: 15y 2m 1d</p>
+                    <p>•</p>
+                    <p id="time">15:00 IST</p>
+                </div>
+                <p class="text-5xl font-bold italic my-3 px-2">sai santosh pal</p>
+                <p class="w-[80%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="right w-[40%] max-w-[500px] h-full">
+                .
+            </div>
         </div>
     </div>
 </body>
 <style>
     * {
-        font-family: 'Geist Pixel'
+        font-family: 'Geist Pixel';
+        /* overflow: hidden; */
     }
+    
+    body {
+        background-color: #000;
+        opacity: 0.8;
+        background-image:  radial-gradient(#191819 1.5px, transparent 1.5px), radial-gradient(#191819 1.5px, #000 1.5px);
+        background-size: 20px 20px;
+        background-position: 0 0,10px 10px;
+        overflow-x: hidden;
+    }
+
+    .fx {
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+        aspect-ratio: auto;
+        margin: 0;
+        overflow: hidden;
+        isolation: isolate;
+        background-color: #000;
+        margin-top: -10px;
+        box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .fx img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(1) contrast(1.35) brightness(0.97);
+        transform: scale(1.05);
+        transition: filter .8s cubic-bezier(.22, 1, .36, 1),
+              transform .8s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .fx::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: radial-gradient(circle at center, #333333 0 1px, transparent 1.6px) 0 0 / 4px 4px;
+        mix-blend-mode: multiply;
+        opacity: 0.5;
+        pointer-events: none;
+        transition: opacity .8s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .fx::after {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        z-index: 2;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.2 -.1'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        mix-blend-mode: overlay;
+        opacity: 0.4;
+        pointer-events: none;
+        animation: grain 1s steps(6) infinite;
+        transition: opacity .8s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    @keyframes grain {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(-3%, 2%); }
+    40%  { transform: translate(2%, -3%); }
+    60%  { transform: translate(-2%, -1%); }
+    80%  { transform: translate(3%, 3%); }
+    100% { transform: translate(0, 0); }
+    }
+
+    .fx:hover img {
+        filter: grayscale(0) contrast(1) brightness(1);
+        transform: scale(1) 
+    }
+    .left > div{
+        position: relative;
+        left: -10px;
+    }
+    #fx1 {
+        rotate: -10deg;
+        transition: all 0.2s ease-in-out;
+    }
+    #fx1:hover {
+        transform: rotate(-10deg)
+    }
+    .img{
+        transition: all 0.2s .8s ease-in;
+    }
+
+    .fx:hover::before{
+        opacity: 0;
+    }
+
+    .fx:hover::after {
+        opacity: 0;
+    }
+
 </style>
 </html>
