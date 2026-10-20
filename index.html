@@ -17,20 +17,45 @@
             <div class="w-[40%] side max-w-[400px] h-[2px] border-[0.5px] border-dashed border-stone-700 transition-all duration-150 ease-in hover:border-stone-400"></div>
         </div>
         <div class="h-[90vh] bottom-hidden flex items-center justify-between">
-            <div class="left w-[40%] max-w-[500px] h-[85vh]">
+            <div class="left w-[40%] max-w-[500px] max-h-[85vh]">
                 <div id="img1" class="img">
-                    <figure class="fx" id="fx1">
-                        <img src="./images/daydream1.jpeg">
+                    <figure class="fx md:hidden" id="fx1">
+                        <img class="mobile-animate" style="transform: scaleX(-1)" src="./images/daydream1.jpeg">
+                    </figure>
+                    <figure class="fx hidden md:block" id="fx1">
+                        <img class="hidden md:block" style="transform: scaleX(1)" src="./images/daydream1.jpeg">
                     </figure>
                 </div>
                 <div id="img2" class="img">
-                    <figure class="fx" id="fx2">
-                        <img src="./images/daydream2.jpeg">
+                    <figure class="fx md:hidden" id="fx2">
+                        <img class="mobile-animate" style="transform: scaleX(-1)" src="./images/indiainnovates.jpeg">
+                    </figure>
+                    <figure class="fx hidden md:block" id="fx2">
+                        <img class="hidden md:block" style="transform: scaleX(1)" src="./images/indiainnovates.jpeg">
+                    </figure>
+                </div>
+                <div id="img2" class="img md:hidden">
+                    <figure class="fx md:hidden" id="fx2">
+                        <img class="mobile-animate" style="transform: scaleX(-1)" src="./images/daydream2.jpeg">
+                    </figure>
+                    <figure class="fx hidden md:block" id="fx2">
+                        <img class="hidden md:block" style="transform: scaleX(1)" src="./images/daydream2.jpeg">
+                    </figure>
+                </div>
+                <div id="img1" class="img md:hidden">
+                    <figure class="fx md:hidden" id="fx1">
+                        <img class="mobile-animate" style="transform: scaleX(-1)" src="./images/sil5.jpeg">
+                    </figure>
+                    <figure class="fx hidden md:block" id="fx1">
+                        <img class="hidden md:block" style="transform: scaleX(1)" src="./images/sil5.jpeg">
                     </figure>
                 </div>
                 <div id="img3" class="img">
-                    <figure class="fx" id="fx3">
-                        <img src="./images/daydream3.jpeg">
+                    <figure class="fx md:hidden" id="fx3">
+                        <img class="mobile-animate" style="transform: scaleX(-1)" src="./images/daydream3.jpeg">
+                    </figure>
+                    <figure class="fx hidden md:block" id="fx3">
+                        <img class="hidden md:block" style="transform: scaleX(1)" src="./images/daydream3.jpeg">
                     </figure>
                 </div>
             </div>
@@ -38,26 +63,42 @@
                 <div class="flex flex-row gap-2 text-stone-400">
                     <p id="age">age: 15y 2m 1d</p>
                     <p>•</p>
-                    <p id="time">15:00 IST</p>
+                    <p id="time">15:00:00 IST</p>
                 </div>
                 <p class="text-5xl font-bold italic my-3 px-2">sai santosh pal</p>
                 <p class="w-[80%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
             </div>
-            <div class="right w-[40%] flex max-w-[500px] h-full">
+            <div class="right lg:mr-[0px] mr-[-50px] w-[40%] flex max-w-[500px] max-h-[85vh]">
                 <div class="ml-auto">
                     <div id="img4" class="img">
                     <figure class="fx" id="fx4">
-                        <img src="./images/sil3.jpeg">
+                        <img class="mobile-flip" src="./images/sil3.jpeg">
                     </figure>
                 </div>
                 <div id="img5" class="img">
                     <figure class="fx" id="fx5">
-                        <img src="./images/sil-2.jpeg">
+                        <img class="mobile-flip" src="./images/sil-2.jpeg">
+                    </figure>
+                </div>
+                <div id="img2" class="img md:hidden">
+                    <figure class="fx md:hidden" id="fx2">
+                        <img class="mobile-flip" src="./images/indiainnovates.jpeg">
+                    </figure>
+                    <figure class="fx hidden md:block" id="fx2">
+                        <img class="hidden md:block" src="./images/indiainnovates.jpeg">
+                    </figure>
+                </div>
+                <div id="img1" class="img md:hidden">
+                    <figure class="fx md:hidden" id="fx1">
+                        <img class="mobile-flip" src="./images/daydream6.jpeg">
+                    </figure>
+                    <figure class="fx hidden md:block" id="fx1">
+                        <img class="hidden md:block" src="./images/daydream6.jpeg">
                     </figure>
                 </div>
                 <div id="img6" class="img">
                     <figure class="fx" id="fx6">
-                        <img src="./images/sil.jpeg">
+                        <img class="mobile-flip" src="./images/sil.jpeg">
                     </figure>
                 </div>  
                 </div>
@@ -70,6 +111,17 @@
         font-family: 'Geist Pixel';
         /* overflow: hidden; */
     }
+
+
+
+    @media only screen and (max-width: 768px) {
+        .mobile-flip {
+            transform: scaleX(-1) !important
+        }
+        .mobile-animate {
+            transform: scaleX(1) !important
+        }
+    }
     
     body {
         background-color: #000;
@@ -80,6 +132,13 @@
         overflow-x: hidden;
     }
 
+    #fx1, #fx2, #fx4, #fx5 {
+        aspect-ratio: 4/3;
+    }
+
+    #fx3, #fx6 {
+        aspect-ratio: 3/4;
+    }
 
     .fx {
         position: relative;
@@ -148,7 +207,7 @@
     }
 
     .fx:hover img {
-        filter: grayscale(0) contrast(1) brightness(1);
+        filter: grayscale(0) contrast(1) brightness(1) saturate(2);
         transform: scale(1) 
     }
     .left > div{
