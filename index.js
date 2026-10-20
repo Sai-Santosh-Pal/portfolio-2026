@@ -42,3 +42,38 @@ setInterval(() => {
     }
     document.getElementById('age').innerHTML = `${year}y ${months}m ${days}d`
 }, 1000)
+
+
+function particles(x, y) {
+    const container = document.createElement('div')
+    container.classList.add('firework-container')
+    container.style.left = `${x}px`
+    container.style.top = `${y}px`
+    document.body.appendChild(container)
+    const particles = 30
+    for (let i = 0; i < particles; i++) {
+        console.log('p')
+        const particle = document.createElement('div')
+        particle.classList.add('particle')
+        const angle = Math.random() * Math.PI * 2
+        const velocity = Math.random() * 80 + 40
+        const xOffset=Math.cos(angle) * velocity
+        const yOffset = Math.sin(angle) * velocity
+
+        particle.style.setProperty('--x', `${xOffset}px`)
+        particle.style.setProperty('--y', `${yOffset}px`)
+
+        const randomHue = Math.floor(Math.random() * 100)
+        particle.style.backgroundColor = `hsl(0, 0%, ${randomHue}%)`
+        particle.style.boxShadow = `0 0 8px hsl(0, 0%, ${randomHue}%)`
+
+        container.appendChild(particle)
+    }
+    setTimeout(()=>{
+        container.remove()
+    }, 5000)
+}
+
+document.body.addEventListener('click', (e) =>{
+    particles(e.clientX, e.clientY)
+})
