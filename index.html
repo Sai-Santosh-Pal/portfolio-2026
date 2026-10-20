@@ -17,7 +17,7 @@
             <div class="w-[40%] side max-w-[400px] h-[2px] border-[0.5px] border-dashed border-stone-700 transition-all duration-150 ease-in hover:border-stone-400"></div>
         </div>
         <div class="h-[90vh]  bottom-hidden flex items-center justify-between">
-            <div class="left w-[40%] max-w-[500px] max-h-[85vh]">
+            <div class="left lg:ml-[0px] ml-[-10px] w-[40%] max-w-[500px] max-h-[85vh]">
                 <div id="img1" class="img">
                     <figure class="fx md:hidden" id="fx1">
                         <img class="mobile-animate" style="transform: scaleX(-1)" src="./images/daydream1.jpeg">
@@ -60,15 +60,19 @@
                 </div>
             </div>
             <div class="text-center items-center justify-center flex flex-col">
-                <div id="data" class="flex  opacity-0 flex-row gap-2 text-stone-400">
+                <div id="data" class="flex lg:text-xl opacity-0 flex-row gap-2 text-stone-400">
                     <p id="age">age: 15y 2m 1d</p>
                     <p>•</p>
                     <p id="time" class="w-[auto]">15:00:00 IST</p>
                 </div>
-                <p class="text-5xl font-bold italic my-3 px-2">hi! i'm sai</p>
-                <p class="w-[80%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+                <p class="text-5xl lg:text-7xl font-bold italic my-3 px-2">hi! i'm sai</p>
+                <p class="w-[80%] lg:text-xl text-stone-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+                <div class="buttons mt-5 flex items-center justify-center w-[300px] gap-2 w-fixed">
+                    <a href="#" class="cursor-pointer btn-1 bg-white lg:text-lg text-black px-5 py-2 w-[130px] hover:w-[140px]">about me</a>
+                    <a href="#" class="cursor-pointer btn-2 border-1 lg:text-lg bg-black border-stone-400 border-dashed px-5 py-2 w-[138px] hover:w-[143px]">contact me</a>
+                </div>
             </div>
-            <div class="right  lg:mr-[0px] mr-[-50px] w-[40%] flex max-w-[500px] max-h-[85vh]">
+            <div class="right  lg:mr-[0px] mr-[-10px] w-[40%] flex max-w-[500px] max-h-[85vh]">
                 <div class="ml-auto">
                     <div id="img4" class="img">
                     <figure class="fx" id="fx4">
@@ -108,6 +112,28 @@
     <script src="index.js"></script>
 </body>
 <style>
+    .buttons{
+        transition: all 0.8s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .btn-2:hover, .btn-1:hover{
+        padding-inline: 12px;
+    }
+
+    .btn-2 {
+        transition: all 0.8s cubic-bezier(.22, 1, .36, 1);
+        /* font-size: 16px; */
+    }
+    .btn-1 {
+        transition: all 0.8s cubic-bezier(.22, 1, .36, 1);
+        /* font-size: 16px; */
+    }
+    /* .btn-1:hover + .btn-2 {
+        font-size: 12px;
+        padding-inline: 20px;
+    } */
+
+
     * {
         font-family: 'Geist Pixel';
         /* overflow: hidden; */
