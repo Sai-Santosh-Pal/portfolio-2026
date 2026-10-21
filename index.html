@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="h-[100vh] w-[100vw] bg-black text-white">
+    <div class="w-[100vw] flex justify-center flex-col bg-black text-white">
         <div class="nav  h-20 flex cursor-pointer items-center justify-center gap-1">
             <div class="w-[40%] side max-w-[400px] h-[2px] border-[0.5px] border-dashed border-stone-700 transition-all duration-150 ease-in hover:border-stone-400"></div>
             <div class="font-black italic title transition-all duration-150 ease-in hover:not-italic">sai</div>
@@ -109,16 +109,15 @@
                 </div>
             </div>
         </div>
-        <div class="h-[90vh] w-[100vw] w-full flex md:justify-center items-center bg-black">
-            <div class="about-content flex justify-center w-full md:max-w-[1500px] items-center flex-col md:flex-row  reveal text-white">
+        <div class="h-[90vh] w-full flex md:justify-center items-center bg-black">
+            <div class="about-content flex justify-center w-full items-center flex-col md:flex-row  reveal text-white">
                 <div class="right mb-10 md:mb-0 flex items-center md:text-left justify-center flex-col gap-5">
                     <p class="text-5xl">about me</p>
                     <p class="w-[80%] md:text-left text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eos repellendus quod deserunt nulla asperiores obcaecati voluptate dignissimos possimus. Quos hic ut a itaque, nesciunt voluptatibus minus incidunt corporis ratione.</p>
                     <p class="w-[80%] md:text-left text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eos repellendus quod deserunt nulla asperiores obcaecati voluptate dignissimos possimus. Quos hic ut a itaque, nesciunt voluptatibus minus incidunt corporis ratione.</p>
-                    <p class="w-[80%] md:text-left text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eos repellendus quod deserunt nulla asperiores obcaecati voluptate dignissimos possimus. Quos hic ut a itaque, nesciunt voluptatibus minus incidunt corporis ratione.</p>
                 </div>
-                <div class="left reveal">
-                    <div id="imgnew5" class="imgnew">
+                <div class="left reveal flex items-center justify-center md:pl-[0px] pl[10px]">
+                    <div id="imgnew5" class="imgnew ">
                     <figure class="fxnew" id="fxnew5">
                         <img class="md:w-[30%]" src="./images/sil-2.jpeg">
                     </figure>
@@ -126,7 +125,23 @@
                 </div>
             </div>
         </div>
-        <div class="h-[90vh]"></div>
+        <div class="bg-white self-center w-[100%] md:h-[30vh] flex items-center justify-center">
+            <div class="flex flex-col w-full text-black items-center justify-center md:flex-row">
+                <div class="flex flex-col md:h-[30vh] reveal items-center justify-center w-[33%] h-[20vh] w-full border-1 border-gray-600 border-dashed reveal">
+                    <p id="hackatime" class="text-5xl reveal">400hr+</p>
+                    <p class="mt-2">code time (in the last 2yrs)</p>
+                </div>
+                <div class="h-[20vh] reveal w-full flex-col items-center flex justify-center">
+                    <p id="repos" class="text-5xl">135+</p>
+                    <p class="mt-2">github repositories made (incl. private repos)</p>
+                </div>
+                <div class="items-center md:h-[30vh] justify-center flex flex-col h-[20vh] w-full border-1 border-gray-600 border-dashed reveal">
+                    <p id="linkedin" class="text-5xl">70K+</p>
+                    <p class="mt-2">linkedin post impressions</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-90"></div>
     </div>
     
     <script src="index.js"></script>
