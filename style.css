@@ -4,6 +4,36 @@
     animation-timeline: view();
 }
 
+.scrollRtoL {
+    margin-left: 0px;
+    animation: .8s paneRtoL forwards;
+    animation-timeline: view();
+}
+
+.scrollLtoR {
+    margin-right: 0px;
+    animation: .8s paneLtoR forwards;
+    animation-timeline: view();
+}
+
+@keyframes paneRtoL {
+    from {
+        margin-left: 0px;
+    }
+    to{
+        margin-left: -40%;
+    }
+}
+
+
+@keyframes paneLtoR {
+    from {
+        margin-right: 0px;
+    }
+    to{
+        margin-right: -40%;
+    }
+}
 
 .fxnew {
     position: relative;
