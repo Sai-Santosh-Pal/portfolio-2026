@@ -1,3 +1,9 @@
+const lenis = new Lenis(); 
+function raf(time) { 
+    lenis.raf(time); requestAnimationFrame(raf); 
+} 
+requestAnimationFrame(raf);
+
 setTimeout(() => {
     document.getElementById('data').style.opacity = 1
 }, 1000)

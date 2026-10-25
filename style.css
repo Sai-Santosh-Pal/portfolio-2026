@@ -8,12 +8,15 @@
     margin-left: 0px;
     animation: .8s paneRtoL forwards;
     animation-timeline: view();
+    transition: all .8s cubic-bezier(.22, 1, .36, 1),
+
 }
 
 .scrollLtoR {
     margin-right: 0px;
     animation: .8s paneLtoR forwards;
-    animation-timeline: view();
+    animation-timeline: view(); 
+    transition: all .8s cubic-bezier(.22, 1, .36, 1),
 }
 
 @keyframes paneRtoL {
