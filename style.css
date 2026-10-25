@@ -8,23 +8,24 @@
     margin-left: 0px;
     animation: .8s paneRtoL forwards;
     animation-timeline: view();
-    transition: all .8s cubic-bezier(.22, 1, .36, 1),
-
+    transition: all .8s cubic-bezier(.22, 1, .36, 1);
 }
 
 .scrollLtoR {
     margin-right: 0px;
     animation: .8s paneLtoR forwards;
     animation-timeline: view(); 
-    transition: all .8s cubic-bezier(.22, 1, .36, 1),
+    transition: all .8s cubic-bezier(.22, 1, .36, 1);
 }
 
 @keyframes paneRtoL {
     from {
         margin-left: 0px;
+        /* overflow-x: hidden; */
     }
     to{
         margin-left: -40%;
+        /* overflow-x:visible; */
     }
 }
 
